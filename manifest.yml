@@ -1,0 +1,27 @@
+---
+declared-services:
+  Conversation-original:
+    label: conversation
+    plan: free
+  Weather Company Data-original:
+    label: weather
+    plan: free
+  Speech to Text-original:
+    label: speech_to_text
+    plan: standard
+  Text to Speech-original:
+    label: text_to_speech
+    plan: standard
+applications:
+- name: original
+  command: npm start
+  path: .
+  memory: 512M
+  instances: 1
+  services:
+  - Weather Company Data-original
+  - Text to Speech-original
+  - Speech to Text-original
+  - Conversation-original
+  env:
+    NPM_CONFIG_PRODUCTION: false
